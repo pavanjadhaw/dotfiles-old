@@ -1,0 +1,35 @@
+#
+# wm independent hotkeys
+#
+
+# MISC
+XF86MonBrightness{Up,Down}
+    bri {u,d}
+
+XF86Audio{Mute,RaiseVolume,LowerVolume}
+    vol {m,u,d}
+
+XF86Audio{Prev,Next,Play}
+    playerctl {previous,next,play-pause}
+
+shift + XF86Audio{Prev,Next,Play}
+    cmus-remote {-r -p,-n -p,-u}
+
+{_,super} + Print
+    scr {_,f}
+
+# program launcher
+alt + d
+    rsh
+
+# window switcher
+alt + i
+    rsh w
+
+# lockscreen
+alt + shift + p
+    slock
+
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd

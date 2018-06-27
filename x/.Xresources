@@ -1,0 +1,12 @@
+! colors
+#include ".x/arcDark"
+#include ".x/clrs"
+
+! base16-colors
+! #include ".colors/b16colors/base16-tomorrow-night.Xresources"
+! #include ".x/bclrs"
+
+! etc
+#include ".x/xft"
+#include ".x/urxvt"
+#include ".x/twobwm"

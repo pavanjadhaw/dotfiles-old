@@ -1,0 +1,48 @@
+! terminal colors
+
+*foreground:   fg
+#ifdef background_opacity
+*background:   [background_opacity]base00
+#else
+*background:   bg
+#endif
+*cursorColor:  fg
+
+*color0:       blk
+*color1:       red
+*color2:       grn
+*color3:       ylw
+*color4:       blu
+*color5:       mag
+*color6:       cyn
+*color7:       wht
+
+*color8:       bblk
+*color9:       bred
+*color10:      bgrn
+*color11:      bylw
+*color12:      bblu
+*color13:      bmag
+*color14:      bcyn
+*color15:      bwht
+
+
+
+
+! rofi colors
+
+!                   bg  fg  bgalt   hlbg    hlfg
+rofi.color-window:  bg, bg, bg
+rofi.color-normal:  bg, fg, bg,     bg,     blu
+
+
+
+
+! 2bwm colors
+
+twobwm.focus_color: fg
+twobwm.unfocus_color: bblk
+twobwm.fixed_color: blu
+twobwm.unkill_color: red
+twobwm.outer_border_color: bg
+twobwm.fixed_unkill_color: grn

@@ -1,0 +1,67 @@
+#!/bin/sh
+#
+# bspwm config
+bg=$(get_xres color0)
+fg=$(get_xres color7)
+acc=$(get_xres color8)
+
+
+# SETTINGS
+
+bspc monitor -d 1 2 3 4
+# bspc monitor -d I II III IV V VI VII VIII IX X
+bspc config focus_follows_pointer true
+# bspc config click_to_focus true
+bspc config pointer_follows_focus true
+
+bspc config border_width    4
+bspc config window_gap      12
+
+## color settings
+
+
+bspc config normal_border_color     "$bg"
+bspc config active_border_color     "$bg"
+bspc config focused_border_color    "$acc"
+bspc config presel_feedback_color   "$acc"
+
+bspc config split_ratio          0.50
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc config external_rules_command "$(which rules)"
+
+# window rules
+
+## workspace 1 (labs)
+bspc rule -a URxvt desktop='^1' follow=on focus=on
+bspc rule -a Xfce4-terminal desktop='^1' follow=on focus=on
+
+## workspace 2 (code)
+bspc rule -a Code desktop='^2' follow=on focus=on
+
+## workspace 3 (web browsers)
+bspc rule -a Chromium Google-chrome-unstable desktop='^3' follow=on focus=on
+bspc rule -a Google-chrome-unstable desktop='^3' follow=on focus=on
+
+## workspace 4 (file-manager)
+bspc rule -a Thunar desktop='^4' follow=on focus=on
+bspc rule -a Viewnior desktop='^4' follow=on focus=on
+bspc rule -a feh desktop='^4' follow=on focus=on
+
+## workspace 4 (multimedia)
+bspc rule -a mpv desktop='^5' follow=on focus=on
+
+## workspace 6 (others)
+bspc rule -a Transmission-gtk desktop='^5' follow=on focus=on
+bspc rule -a Lightdm-gtk-greeter-settings desktop='^5' state=floating follow=on
+bspc rule -a Lxappearance desktop='^5' state=floating follow=on
+bspc rule -a Uget-gtk desktop='^5' follow=on focus=on
+bspc rule -a qBittorrent desktop='^5' follow=on focus=on
+
+## workspace 7 (chat)
+bspc rule -a TelegramDesktop desktop='^5' follow=on focus=on
+
+## need to be floating
+bspc rule -a Viewnior state=floating follow=on
+bspc rule -a feh state=floating follow=on

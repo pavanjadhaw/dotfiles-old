@@ -1,0 +1,6 @@
+! 2bwm config
+
+twobwm.outer_border: 0
+twobwm.border_width: 2
+twobwm.inverted_colors: false
+twobwm.enable_compton: true

@@ -1,0 +1,13 @@
+rofi.color-enabled     : true
+rofi.fake-transparency : false
+rofi.font              : lemon 8
+rofi.columns           : 2
+rofi.separator-style   : none
+rofi.hide-scrollbar    : true
+rofi.location          : 1
+rofi.yoffset           : 50
+rofi.xoffset           : 20
+rofi.padding           : 24
+rofi.fullscreen        : false
+rofi.width             : 300
+rofi.lines             : 6
