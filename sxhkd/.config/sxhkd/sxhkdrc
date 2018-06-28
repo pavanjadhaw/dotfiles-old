@@ -16,15 +16,15 @@ shift + XF86Audio{Prev,Next,Play}
     cmus-remote {-r -p,-n -p,-u}
 
 {_,super} + Print
-    scr {_,f}
+    lien {-a,-s}
 
 # program launcher
 alt + d
-    rsh
+    rofi.sh
 
 # window switcher
 alt + i
-    rsh w
+    rofi.sh w
 
 # lockscreen
 alt + shift + p
