@@ -10,8 +10,6 @@
 bg = ${xrdb:color0}
 fg = ${xrdb:color7}
 
-
-blk = ${xrdb:color0}
 red = ${xrdb:color1}
 grn = ${xrdb:color2}
 ylw = ${xrdb:color3}
@@ -19,15 +17,7 @@ blu = ${xrdb:color4}
 mag = ${xrdb:color5}
 cyn = ${xrdb:color6}
 wht = ${xrdb:color7}
-
 bblk = ${xrdb:color8}
-bred = ${xrdb:color9}
-bgrn = ${xrdb:color10}
-bylw = ${xrdb:color11}
-bblu = ${xrdb:color12}
-bmag = ${xrdb:color13}
-bcyn = ${xrdb:color14}
-bwht = ${xrdb:color15}
 
 [global/wm]
 margin-top        = 0
@@ -41,17 +31,17 @@ height   = 32
 offset-x = 0
 offset-y = 0
 
-background = ${colors.blk}
+background = ${colors.bg}
 foreground = ${colors.fg}
-border-color = ${colors.blk}
+border-color = ${colors.bg}
 
 font-0 = lemon:size=8;1
 font-1 = scientifica:size=8:antialias=true;1
 font-2 = Siji:size=9;2
 
-modules-left   = bspwm 2bws cpu ram battery title
+modules-left   = cpu ram battery title
 modules-center =
-modules-right  = npstatus essid volume backlight date
+modules-right  = nowplaying essid volume backlight date
 
 border-size = 0
 padding-left        = 2
@@ -64,11 +54,11 @@ bottom = true
 [module/network]
 type          = internal/network
 interface     = wlp6s0
-ping-interval = 3
+ping-interval = 30
 
 [module/date]
 type                     = internal/date
-interval                 = 1
+interval                 = 30
 date                     = "|  %A %d %b %I:%M "
 ; format-prefix            = 
 ; format-prefix-foreground = ${colors.grn}
@@ -108,13 +98,13 @@ format-muted-padding    = 1
 format-volume-prefix-foreground = ${colors.mag}
 format-muted-prefix-foreground  = ${colors.mag}
 
-[module/npstatus]
+[module/nowplaying]
 type              = custom/script
-interval          = 0.1
+interval          = 5
 format-text       = <label>
 label-maxlen = 50
 format-padding = 1
-exec              = npstatus
+exec              = ~/bin/nowplaying
 
 [module/cpu]
 type                     = internal/cpu
@@ -134,41 +124,6 @@ label            = " %percentage_used%%"
 
 format-prefix = 
 format-prefix-foreground = ${colors.blu}
-
-
-[module/2bws]
-type              = custom/script
-exec              = ~/bin/wsi
-interval          = 0.01
-format-padding    = 1
-scroll-up         = exec ~/bin/wss -f
-scroll-down       = exec ~/bin/wss -r
-
-[module/bspwm]
-type = internal/bspwm
-pin-workspaces = true
-inline-mode = false
-enable-click = true
-enable-scroll = false
-reverse-scroll = false
-fuzzy-match = false
-
-format-background = ${colors.bg}
-format-padding = 1
-
-label-focused-background    = ${colors.grn}
-label-occupied-background   = ${colors.blu}
-label-urgent-background     = ${colors.red}
-label-empty-background      = ${colors.wht}
-label-focused-foreground    = ${colors.bg}
-label-occupied-foreground   = ${colors.bg}
-label-urgent-foreground     = ${colors.bg}
-label-empty-foreground      = ${colors.bg}
-
-label-focused-padding    = 1
-label-occupied-padding    = 1
-label-urgent-padding    = 1
-label-empty-padding    = 1
 
 [module/essid]
 inherit = module/network
