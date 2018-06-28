@@ -4,7 +4,7 @@
     # Which monitor should the notifications be displayed on.
     monitor = 0
     follow = mouse
-    geometry = "250x50-20+50"
+    geometry = "250x50-20+20"
     indicate_hidden = yes
     shrink = yes
     transparency = 0
