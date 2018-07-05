@@ -1,7 +1,8 @@
 <h1 align="center">dotfiles ❤ ~/</h1>
 
-![scrot0](https://raw.githubusercontent.com/pavanjadhaw/etc/master/scrots/2018-06-24-08-30-32.png)
-![scrot1](https://raw.githubusercontent.com/pavanjadhaw/etc/master/scrots/2018-06-26-11-47-39.png)
+##### scrots
+#####[skigh](https://github.com/dkeg/crayolo/blob/master/colors/skigh)
+![skigh](scrots/2018-06-24-08-30-32.png)
 
 # pavan's dotfiles
 
