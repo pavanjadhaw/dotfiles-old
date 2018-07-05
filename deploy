@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# deploy dotfiles
+
+if ! command -v stow > /dev/null; then
+    echo "error : install stow first"
+    exit 1
+fi
+
+for i in *; do
+    test -d "$i" && stow "$i"
+done
