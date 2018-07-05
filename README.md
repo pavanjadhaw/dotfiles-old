@@ -1,7 +1,5 @@
 <h1 align="center">dotfiles ❤ ~/</h1>
 
-##### scrots
-#####[skigh](https://github.com/dkeg/crayolo/blob/master/colors/skigh)
 ![skigh](scrots/2018-06-24-08-30-32.png)
 
 # pavan's dotfiles
