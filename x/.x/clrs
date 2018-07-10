@@ -40,8 +40,8 @@ rofi.color-normal:  bg, fg, bg,     bg,     blu
 
 ! 2bwm colors
 
-twobwm.focus_color: fg
-twobwm.unfocus_color: bblk
+twobwm.focus_color: bblk
+twobwm.unfocus_color: bg
 twobwm.fixed_color: blu
 twobwm.unkill_color: red
 twobwm.outer_border_color: bg

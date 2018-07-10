@@ -1,5 +1,5 @@
 ! colors
-#include ".x/arcDark"
+#include ".x/colors/skigh"
 #include ".x/clrs"
 
 ! base16-colors
