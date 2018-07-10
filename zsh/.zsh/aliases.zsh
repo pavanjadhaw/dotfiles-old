@@ -25,3 +25,7 @@ alias lc="ll --created -s=created"   # Sorted by created date
 function mkdcd {
   [[ -n "$1" ]] && mkdir -p "$1" && builtin cd "$1"
 }
+
+# local web server
+alias serve="browser-sync start -s -f . --no-notify --host $LOCAL_IP --port 9000"
+
