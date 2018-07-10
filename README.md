@@ -1,6 +1,15 @@
 <h1 align="center">dotfiles ❤ ~/</h1>
 
-![skigh](scrots/2018-06-24-08-30-32.png)
+<p align="center">
+    <b>designr</b><br>
+</p>
+![designr](scrots/designr.png)
+
+<p align="center">
+    <b>skigh</b><br>
+</p>
+![skigh](scrots/skigh-0.png)
+![skigh](scrots/skigh-1.png)
 
 # pavan's dotfiles
 
