@@ -3,7 +3,6 @@
 # xinitrc
 
 # start daemons
-# udiskie -aT &
 urxvtd -q -o -f
 compton -b &
 dunst &
@@ -20,13 +19,12 @@ xset +fp $HOME/.local/share/fonts
 xset fp rehash
 
 # set background
-hsetroot -solid $(get_xres color2)
-# source ~/.fehbg &
+source ~/.fehbg &
 
 # etc
-polybar -r base &
 
 # system
+# udiskie -aT &
 # thunar --daemon &
 # xfce4-power-manager &
 # /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
@@ -37,12 +35,20 @@ session=${1:-2bwm}
 
 case $session in
     2bwm|twobwm     ) sxhkd -m 1 & \
+                        polybar base & \
                         exec 2bwm;;
+
+
     dwm             ) sxhkd -m 1 & \
                         slstatus & \
                         exec dwm;;
+
+
     bspwm|bsp       ) sxhkd -m 1 -c ~/.config/sxhkd/bspsxhkdrc & \
+                        polybar base & \
                         exec bspwm;;
+
+
     # No known session, try to run it as command
     *               ) exec $1;;
 esac
