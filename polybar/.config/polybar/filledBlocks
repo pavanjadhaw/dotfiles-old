@@ -27,25 +27,26 @@ override-redirect = true
 [bar/base]
 monitor = ${env:MONITOR:eDP1}
 width    = 100%
-height   = 24
+height   = 20
 offset-x = 0
 offset-y = 0
 
 background = ${colors.bg}
 foreground = ${colors.fg}
-border-color = ${colors.bblk}
+border-color = ${colors.bg}
 
-font-0=lemon:size=8;2
-font-1=Siji:size=8;2
+font-0 = lemon:size=8;1
+font-1 = scientifica:size=8:antialias=true;1
+font-2 = Siji:size=9;2
 
-modules-left   = cpu ram battery title
+modules-left   = time cpu ram battery title
 modules-center =
 modules-right  = nowplaying essid volume backlight date
 
-border-size = 0
-padding-left        = 1
-padding-right       = 1
-module-margin-left  = 2
+border-size = 6
+padding-left        = 0
+padding-right       = 0
+module-margin-left  = 1
 module-margin-right = 0
 
 bottom = true
@@ -58,10 +59,22 @@ ping-interval = 30
 [module/date]
 type                     = internal/date
 interval                 = 30
-date                     = "|  %A %d %B, %I:%M %p  "
+date                     = "%A %d, %B"
 ; format-prefix            = 
 ; format-prefix-foreground = ${colors.grn}
-format-padding           = 0
+format-background = ${colors.grn}
+format-foreground = ${colors.bg}
+format-padding           = 2
+
+[module/time]
+type                     = internal/date
+interval                 = 30
+date                     = "%I:%M %p"
+; format-prefix            = 
+; format-prefix-foreground = ${colors.grn}
+format-background = ${colors.blu}
+format-foreground = ${colors.bg}
+format-padding           = 2
 
 [module/title]
 type = internal/xwindow
@@ -74,9 +87,11 @@ card = intel_backlight
 enable-scroll = false
 
 format = <label>
-format-prefix = " "
-format-prefix-foreground = ${colors.ylw}
-format-padding    = 1
+format-prefix = 
+; format-prefix-foreground = ${colors.ylw}
+format-background = ${colors.ylw}
+format-foreground = ${colors.bg}
+format-padding    = 2
 
 label=%percentage%%
 
@@ -85,44 +100,51 @@ type = internal/volume
 
 format-volume = <label-volume>
 format-muted = <label-muted>
+format-volume-background = ${colors.mag}
+format-volume-foreground = ${colors.bg}
+format-muted-background = ${colors.mag}
+format-muted-foreground = ${colors.bg}
 
 label-muted             = muted
 
 format-volume-prefix = " "
 format-muted-prefix  = " "
 
-format-volume-padding = 1
-format-muted-padding    = 1
-
-format-volume-prefix-foreground = ${colors.mag}
-format-muted-prefix-foreground  = ${colors.mag}
+format-volume-padding = 2
+format-muted-padding    = 2
 
 [module/nowplaying]
 type              = custom/script
 interval          = 5
 format-text       = <label>
 label-maxlen = 50
-format-padding = 1
-exec              = ~/bin/nplaying
+format-padding = 2
+exec              = ~/bin/nowplaying
+format-background = ${colors.grn}
+format-foreground = ${colors.bg}
 
 [module/cpu]
 type                     = internal/cpu
 label                    = " %percentage%%"
-format-padding           = 1
+format-padding           = 2
 format-prefix            = 
 
-format-prefix-foreground = ${colors.grn}
+; format-prefix-foreground = ${colors.grn}
+format-background = ${colors.grn}
+format-foreground = ${colors.bg}
 
 [module/ram]
 type     = internal/memory
 interval = 3
 
 format           = <label>
-format-padding   = 1
+format-padding   = 2
 label            = " %percentage_used%%"
 
 format-prefix = 
-format-prefix-foreground = ${colors.blu}
+; format-prefix-foreground = ${colors.blu}
+format-background = ${colors.blu}
+format-foreground = ${colors.bg}
 
 [module/essid]
 inherit = module/network
@@ -133,13 +155,17 @@ format-disconnected = <label-disconnected>
 format-connected-prefix     = ""
 format-disconnected-prefix  = ""
 
+format-connected-background = ${colors.cyn}
+format-disconnected-background = ${colors.cyn}
+format-connected-foreground = ${colors.bg}
+format-disconnected-foreground = ${colors.bg}
 label-connected             = " %essid%"
 label-disconnected          = " disconnected"
 
-format-connected-padding     = 1
-format-disconnected-padding  = 1
-format-connected-prefix-foreground     = ${colors.cyn}
-format-disconnected-prefix-foreground  = ${colors.cyn}
+format-connected-padding     = 2
+format-disconnected-padding  = 2
+; format-connected-prefix-foreground     = ${colors.cyn}
+; format-disconnected-prefix-foreground  = ${colors.cyn}
 
 [module/battery]
 type          = internal/battery
@@ -160,6 +186,13 @@ format-charging-padding = 1
 format-discharging-padding = 1
 format-full-padding    = 1
 
-format-charging-prefix-foreground = ${colors.red}
-format-discharging-prefix-foreground = ${colors.red}
-format-full-prefix-foreground    = ${colors.red}
+format-charging-background      = ${colors.red}
+format-discharging-background   = ${colors.red}
+format-full-background          = ${colors.red}
+format-charging-foreground      = ${colors.bg}
+format-discharging-foreground   = ${colors.bg}
+format-full-foreground          = ${colors.bg}
+
+; format-charging-prefix-foreground = ${colors.red}
+; format-discharging-prefix-foreground = ${colors.red}
+; format-full-prefix-foreground    = ${colors.red}
