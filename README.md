@@ -1,6 +1,6 @@
 <h1 align="center">dotfiles ❤ ~/</h1>
 
-![designr](scrots/designr.png)
+![designr](img/scrots/designr.png)
 
 # pavan's dotfiles
 
