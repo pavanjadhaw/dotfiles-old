@@ -200,7 +200,7 @@ set list
 set ruler
 set number
 set relativenumber
-"" set cursorline
+" set cursorline
 
 set background=dark
 " let no_buffers_menu=1
@@ -212,8 +212,7 @@ set background=dark
 "   let base16colorspace=256
 "   source ~/.vimrc_background
 " endif
-" colorscheme plain
-colorscheme agila
+colorscheme plain
 
 " set listchars=tab:│\ ,nbsp:␣,trail:∙,extends:>,precedes:<,eol:¬
 " set fillchars=vert:\│
