@@ -9,7 +9,7 @@
 
 !black
 #define blk     #252a32
-#define bblk    #636B77
+#define bblk    #3b434f
 
 !red
 #define red     #876058
