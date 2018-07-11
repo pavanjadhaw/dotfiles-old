@@ -39,6 +39,10 @@ case $session in
                         exec 2bwm;;
 
 
+    herb            ) sxhkd -m 1 & \
+                        exec herbstluftwm;;
+
+
     dwm             ) sxhkd -m 1 & \
                         slstatus & \
                         exec dwm;;
