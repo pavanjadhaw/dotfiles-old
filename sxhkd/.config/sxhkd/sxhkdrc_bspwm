@@ -1,46 +1,10 @@
 #
-# wm independent hotkeys
-#
-
-# MISC
-XF86MonBrightness{Up,Down}
-    bri {u,d}
-
-XF86Audio{Mute,RaiseVolume,LowerVolume}
-    vol {m,u,d}
-
-XF86Audio{Prev,Next,Play}
-    playerctl {previous,next,play-pause}
-
-shift + XF86Audio{Prev,Next,Play}
-    cmus-remote {-r -p,-n -p,-u}
-
-{_,super} + Print
-    lien {-a,-s}
-
-# terminal emulator
-super + Return
-	urxvt
-
-# program launcher
-alt + d
-    rofi.sh
-
-# window switcher
-alt + i
-    rofi.sh w
-
-# lockscreen
-alt + shift + p
-    slock
-
-# make sxhkd reload its configuration files:
-super + Escape
-	pkill -USR1 -x sxhkd
-
-#
 # bspwm hotkeys
 #
+
+# terminal
+super + Return
+    urxvtc
 
 # quit bspwm normally
 super + ctrl + q
