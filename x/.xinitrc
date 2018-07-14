@@ -2,11 +2,6 @@
 #
 # xinitrc
 
-# start daemons
-urxvtd -q -o -f
-compton -b &
-dunst &
-
 # settings
 xsetroot -cursor_name left_ptr
 xset s off -dpms -b
@@ -18,10 +13,11 @@ xrdb -load ~/.Xresources
 xset +fp $HOME/.local/share/fonts
 xset fp rehash
 
-# set background
+# wallpaper
 source ~/.fehbg &
 
-# etc
+unclutter -b
+redshift &
 
 # system
 # udiskie -aT &
@@ -31,28 +27,34 @@ source ~/.fehbg &
 # unclutter -idle 2 &
 # numlockx on
 
-session=${1:-2bwm}
-
-case $session in
-    2bwm|twobwm     ) sxhkd -m 1 & \
-                        polybar base & \
-                        exec 2bwm;;
 
 
-    herb            ) sxhkd -m 1 & \
-                        exec herbstluftwm;;
 
+wm() {
+    # urxvt daemon
+    urxvtd -q -o -f
+    # notification daemon
+    dunst &
+	# Window compositor
+	compton -b
 
-    dwm             ) sxhkd -m 1 & \
-                        slstatus & \
-                        exec dwm;;
+	wm=$1
 
+    if [ $wm == bspwm ]
+    then
+        sxhkd -c $HOME/.config/sxhkd/sxhkdrc_${wm} $HOME/.config/sxhkd/commons &
+    else
+        sxhkd -c $HOME/.config/sxhkd/commons &
+    fi
 
-    bspwm|bsp       ) sxhkd -m 1 -c ~/.config/sxhkd/bspsxhkdrc & \
-                        polybar base & \
-                        exec bspwm;;
+    if [ $wm == dwm ]
+    then
+        slstatus &
+    else
+        polybar base &
+    fi
 
+	exec $wm
+}
 
-    # No known session, try to run it as command
-    *               ) exec $1;;
-esac
+wm 2bwm
