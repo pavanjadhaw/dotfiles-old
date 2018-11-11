@@ -3,16 +3,14 @@ antigen use oh-my-zsh
 
 # antigen plugins
 antigen bundles <<EOBUNDLES
-        zsh-users/zsh-autosuggestions
         zsh-users/zsh-completions
         zsh-users/zsh-syntax-highlighting
+        zsh-users/zsh-history-substring-search
         hlissner/zsh-autopair
-        rupa/z
-        Tarrasch/zsh-bd
 EOBUNDLES
 
 # Load the theme.
-antigen theme https://gist.github.com/pavanjadhaw/cef73ee54f8450600f5d213277bfb0f3 simple
+antigen theme simple
 
 
 

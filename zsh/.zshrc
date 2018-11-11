@@ -1,20 +1,12 @@
-#!/bin/zsh
-
-# Load base16-colors  & lscolors
-# source ~/.zsh/b16.zsh
+#!/usr/bin/env zsh
 
 # Load Antigen
 source ~/.zsh/antigen.zsh
 antigen init ~/.zsh/antigenrc
-ANTIGEN_LOG=~/.zsh/antigen.log
 
-# User configuration
-export LANG=en_US.UTF-8
-
-# Load custom configurations
-source ~/.zsh/history.zsh
-source ~/.zsh/environment.zsh
+# load custom configuration
 source ~/.zsh/aliases.zsh
-source ~/.zsh/git.zsh
-source ~/.zsh/completion.zsh
-source ~/.zsh/transfer.zsh
+source ~/.zsh/history.zsh
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
