@@ -1,10 +1,8 @@
-! colors
+! include colors defination
 #include ".x/colors/skigh"
-#include ".x/clrs"
 
-! base16-colors
-! #include ".colors/b16colors/base16-tomorrow-night.Xresources"
-! #include ".x/bclrs"
+! choose colors for specific program
+#include ".x/clrs"
 
 ! etc
 #include ".x/xft"
