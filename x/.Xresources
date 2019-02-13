@@ -1,5 +1,5 @@
 ! include colors defination
-#include ".x/colors/skigh"
+#include ".x/colors/blok"
 
 ! choose colors for specific program
 #include ".x/clrs"
