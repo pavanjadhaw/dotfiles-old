@@ -7,6 +7,7 @@ alias makepkg-compress="PKGEXT='.pkg.tar.xz' makepkg"
 alias mkdir='mkdir -p'
 alias o='xdg-open'
 alias sudo='sudo -E '
+alias v='nvim'
 
 alias ll="ls -l"
 alias la="ll -a"

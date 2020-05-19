@@ -14,47 +14,9 @@ xset +fp $HOME/.local/share/fonts
 xset fp rehash
 
 # wallpaper
-source ~/.fehbg &
+. ~/.fehbg &
 
-unclutter -b
-redshift &
-
-# system
-# udiskie -aT &
-# thunar --daemon &
-# xfce4-power-manager &
-# /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-# unclutter -idle 2 &
-# numlockx on
-
-
-
-
-wm() {
-    # urxvt daemon
-    urxvtd -q -o -f
-    # notification daemon
-    dunst &
-	# Window compositor
-	compton -b
-
-	wm=$1
-
-    if [ $wm == bspwm ]
-    then
-        sxhkd -c $HOME/.config/sxhkd/sxhkdrc_${wm} $HOME/.config/sxhkd/commons &
-    else
-        sxhkd -c $HOME/.config/sxhkd/commons &
-    fi
-
-    if [ $wm == dwm ]
-    then
-        slstatus &
-    else
-        polybar base &
-    fi
-
-	exec $wm
-}
-
-wm 2bwm
+numlockx on
+compton -b
+slstatus &
+exec dwm

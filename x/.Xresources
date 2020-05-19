@@ -1,10 +1,12 @@
 ! include colors defination
-#include ".x/colors/blok"
+!#include ".x/colors/blok"
 
 ! choose colors for specific program
-#include ".x/clrs"
+!#include ".x/clrs"
 
 ! etc
 #include ".x/xft"
 #include ".x/urxvt"
-#include ".x/twobwm"
+!#include ".x/twobwm"
+st.termname:     st-256color
+

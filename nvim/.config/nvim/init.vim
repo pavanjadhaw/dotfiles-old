@@ -1,47 +1,72 @@
-" Plugins
+"dein Scripts-----------------------------
 if &compatible
-	set nocompatible
+  set nocompatible               " Be iMproved
 endif
-" Add the dein installation directory into runtimepath
-set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
-if dein#load_state('~/.cache/dein')
-	call dein#begin('~/.cache/dein')
+" Required:
+set runtimepath+=/home/paw/.cache/dein/repos/github.com/Shougo/dein.vim
 
-	call dein#add('~/.cache/dein')
-	call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
-	call dein#add('farmergreg/vim-lastplace')
-	call dein#add('ntpeters/vim-better-whitespace')
-	call dein#add('tpope/vim-repeat', { 'on_map' : '.'})
-	call dein#add('tpope/vim-surround', { 'on_map': {'n' : ['cs', 'ds', 'ys'], 'x' : 'S'}, 'depends' : 'vim-repeat'})
-	call dein#add('jiangmiao/auto-pairs')
-	call dein#add('tpope/vim-unimpaired')
-	call dein#add('scrooloose/nerdcommenter')
-	call dein#add('mbbill/undotree', {'on_cmd': ['UndotreeToggle']})
+" Required:
+if dein#load_state('/home/paw/.cache/dein')
+  call dein#begin('/home/paw/.cache/dein')
+
+  " Let dein manage dein
+  " Required:
+  call dein#add('/home/paw/.cache/dein/repos/github.com/Shougo/dein.vim')
+
+  " Add or remove your plugins here like this:
+  "call dein#add('Shougo/neosnippet.vim')
+  "call dein#add('Shougo/neosnippet-snippets')
+	call dein#add('wsdjeg/dein-ui.vim')
+  call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
+  call dein#add('farmergreg/vim-lastplace')
+  call dein#add('ntpeters/vim-better-whitespace')
+  call dein#add('tpope/vim-repeat', { 'on_map' : '.'})
+  call dein#add('tpope/vim-surround', { 'on_map': {'n' : ['cs', 'ds', 'ys'], 'x' : 'S'}, 'depends' : 'vim-repeat'})
+  call dein#add('tpope/vim-unimpaired')
+	call dein#add('tpope/vim-fugitive')
+  call dein#add('jiangmiao/auto-pairs')
+  call dein#add('scrooloose/nerdcommenter')
+  call dein#add('mbbill/undotree', {'on_cmd': ['UndotreeToggle']})
+	call dein#add('preservim/nerdtree')
+	call dein#add('Xuyuanp/nerdtree-git-plugin')
+	call dein#add('mtth/scratch.vim')
+	call dein#add('prettier/vim-prettier', {'build': 'yarn install'})
+	"call dein#add('airblade/vim-gitgutter')
 
   "" language
   call dein#add('sheerun/vim-polyglot')
 
-	"" fuzzy finder
-	call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
-	call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
+  "" fuzzy finder
+  call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
+  call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
+	call dein#add('chriskempson/base16-vim')
 
-	"" color
-	call dein#add('pavanjadhaw/plain')
-	call dein#add('dylanaraps/wal.vim')
-
-	call dein#end()
-	call dein#save_state()
+  " Required:
+  call dein#end()
+  call dein#save_state()
 endif
 
+" Required:
+filetype plugin indent on
+syntax enable
+
+" If you want to install not installed plugins on startup.
 if dein#check_install()
-	call dein#install()
+  call dein#install()
 endif
+
+"End dein Scripts-------------------------
+
 
 """ Coloring
 syntax on
 set background=dark
-colorscheme wal
+
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 """ Other Configurations
 filetype plugin indent on
@@ -56,6 +81,7 @@ set wrap breakindent
 set encoding=utf-8
 set number
 set title
+set cursorline
 
 " Search mappings: These will make it so that going to the next one in a
 " search will center on the line it's found in.
@@ -94,7 +120,7 @@ function! ModeCurrent() abort
 endfunction
 
 hi PrimaryBlock   ctermfg =00 ctermbg=03
-hi SecondaryBlock ctermfg =07 ctermbg=10
+hi SecondaryBlock ctermfg =00 ctermbg=10
 hi Blanks         ctermfg =07 ctermbg=0
 
 highlight EndOfBuffer ctermfg=black ctermbg=black
@@ -230,3 +256,16 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
 \ 'header': ['fg', 'Comment'] }
+
+" NERDtree
+"autocmd vimenter * NERDTree
+let g:NERDTreeWinPos = "right"
+let g:NERDTreeWinSize = 40
+let g:NERDTreeMinimalUI=1
+map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" prettier
+let g:prettier#quickfix_enabled = 0
+let g:prettier#autoformat_require_pragma = 0
+let g:prettier#autoformat_config_present = 1

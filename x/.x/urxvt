@@ -1,7 +1,7 @@
 ! urxvt settings
-URxvt*font:xft:UW Ttyp0:pixelsize=12
-URxvt*boldFont:xft:UW Ttyp0:pixelsize=12
-URxvt*italicFont:xft:UW Ttyp0:pixelsize=12
+URxvt*font:xft:Liberation Mono:pixelsize=12:antialias=true:autohint=true;
+URxvt*boldFont:xft:Liberation Mono:pixelsize=12:antialias=true:autohint=true;
+URxvt*italicFont:xft:Liberation Mono:pixelsize=12:antialias=true:autohint=true;
 
 !! URxvt.lineSpace           : 0
 !! URxvt.letterSpace         : 0

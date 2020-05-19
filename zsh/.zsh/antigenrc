@@ -7,6 +7,7 @@ antigen bundles <<EOBUNDLES
         zsh-users/zsh-syntax-highlighting
         zsh-users/zsh-history-substring-search
         hlissner/zsh-autopair
+				agkozak/zsh-z
 EOBUNDLES
 
 # Load the theme.
