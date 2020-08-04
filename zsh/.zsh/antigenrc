@@ -1,17 +1,28 @@
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
+# nvm configuration
+export NVM_COMPLETION=true
+export NVM_LAZY_LOAD=true
+export NVM_AUTO_USE=true
+
 # antigen plugins
 antigen bundles <<EOBUNDLES
+	git
+	npm
+	docker
+	kubernetes
         zsh-users/zsh-completions
         zsh-users/zsh-syntax-highlighting
+	zsh-users/zsh-autosuggestions
         zsh-users/zsh-history-substring-search
         hlissner/zsh-autopair
-				agkozak/zsh-z
+	agkozak/zsh-z
+	lukechilds/zsh-nvm
 EOBUNDLES
 
 # Load the theme.
-antigen theme simple
+antigen theme cloud
 
 
 
