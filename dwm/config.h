@@ -5,14 +5,14 @@ static const unsigned int borderpx  = 0;        /* border pixel of windows */
 static const unsigned int snap      = 0;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Hack Nerd Font:pixelsize=12" };
-static const char dmenufont[]       = "Hack Nerd Font:pixelsize=12";
-static const char normbordercolor[] = "#33393b";
-static const char normbgcolor[]     = "#33393b";
-static const char normfgcolor[]     = "#ffffff";
-static const char selbordercolor[]  = "#54487a";
-static const char selbgcolor[]      = "#54487a";
-static const char selfgcolor[]      = "#ffffff";
+static const char *fonts[]          = { "FantasqueSansMono Nerd Font Mono:size=10" };
+static const char dmenufont[]       = "FantasqueSansMono Nerd Font Mono:size=10";
+static const char normbordercolor[] = "#000000";
+static const char normbgcolor[]     = "#000000";
+static const char normfgcolor[]     = "#eeffff";
+static const char selbordercolor[]  = "#7898FB";
+static const char selbgcolor[]      = "#7898FB";
+static const char selfgcolor[]      = "#000000";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
@@ -20,7 +20,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "code", "term", "web", "vid", "chat", "etc" };
+static const char *tags[] = { "term", "code", "web", "vid", "chat", "etc" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -33,7 +33,7 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.51; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.52; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 
@@ -58,7 +58,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-b", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]  = { "xfce4-terminal", NULL };
+static const char *termcmd[]  = { "urxvtc", NULL };
 static const char *lockcmd[]  = { "slock", NULL };
 
 static Key keys[] = {
