@@ -8,15 +8,14 @@ xset s off -dpms -b
 xset r rate 300 50
 setxkbmap -option ctrl:nocaps &
 
-# rice
 xrdb -load ~/.Xresources
-xset +fp $HOME/.local/share/fonts
+xset +fp /home/pavan/.local/share/fonts
 xset fp rehash
 
-# wallpaper
-. ~/.fehbg &
-
-numlockx on
+urxvtd -q &
 compton -b
 slstatus &
-exec dwm
+
+hsetroot -cover ~/.wall.png &
+
+~/bin/startdwm
